@@ -21,6 +21,20 @@ Use `nervocuremax-cloudflare-publicar.zip`, que contém somente os arquivos púb
 
 O nome e o e-mail já estão preenchidos. O domínio configurado é `https://nuvessabemestar.com.br`. Se usar outro endereço definitivo, ajuste `BASE_URL` em `js/config.js` e as URLs em `index.html`, `robots.txt` e `sitemap.xml`. Meta Pixel vazio é intencional.
 
+### Publicação pelo terminal com Wrangler
+
+Na pasta do projeto, execute:
+
+```powershell
+npm ci
+npm run cf:login
+npm run deploy
+```
+
+O login abre a autorização da sua conta Cloudflare. Na primeira publicação, selecione a conta e o projeto Pages existente ou crie um projeto quando solicitado. Para escolher explicitamente um projeto existente: `npm run deploy -- --project-name NOME-DO-PROJETO`.
+
+O Wrangler é uma dependência local de desenvolvimento; não é carregado pelos visitantes. Envie `package.json` e `package-lock.json` ao GitHub; nunca envie `node_modules`, `.wrangler` ou credenciais. O upload pelo painel e a integração do Pages com GitHub continuam disponíveis sem login local.
+
 ### GitHub Pages (opcional)
 
 Como o site não depende de servidor, o conteúdo de `dist/` também pode ser publicado no GitHub Pages. Para Cloudflare, mantenha `_headers` na raiz do diretório publicado.

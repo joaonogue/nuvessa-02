@@ -1,0 +1,14 @@
+{
+  "name": "nervocuremax-landing-afiliado",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "node build.mjs",
+    "deploy": "npm run build && wrangler pages deploy dist",
+    "cf:login": "wrangler login",
+    "cf:whoami": "wrangler whoami"
+  },
+  "devDependencies": {
+    "wrangler": "4.155.0"
+  }
+}

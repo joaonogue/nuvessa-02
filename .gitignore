@@ -1,6 +1,10 @@
 dist/
 .openai/
 node_modules/
+.wrangler/
+.env
+.env.*
+.dev.vars
 *.zip
 .DS_Store
 Thumbs.db
